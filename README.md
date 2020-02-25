@@ -35,29 +35,10 @@ No Prerequisites required as of now.
 
 # Remote State Fetch
 
-The following lines of code fetch the state information: 
+No Remote State Fetch is required as of now. 
 
 
 ```
-data "terraform_remote_state" "vpc" {
-  backend = "s3"
-  config = {
-    bucket = "terraform-service"
-    key    = "terraform-state-vpc-service"
-    region = "eu-central-1"
-  }
-}
-
-data "terraform_remote_state" "rds" {
-  backend = "s3"
-  config = {
-    bucket = "terraform-service"
-    key    = "terraform-state-rds-service"
-    region = "eu-central-1"
-  }
-}
-
-
 
 ```
 
