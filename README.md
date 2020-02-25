@@ -98,6 +98,6 @@ region  = "eu-central-1"
 ```
 
 ## README's for AWS Inspector Modules
-* [General info](#www.google.com)
+* [General info](www.google.com)
 * [Technologies](#technologies)
 * [Setup](#setup)
