@@ -56,7 +56,7 @@ env=dev
 
 terraform get -update=true
 
-terraform init -backend-config=environments/dev/backend.config
+terraform init -backend-config=environments/${env}/backend.config
 ```
 
 This will ensure that the modules are registered and any required providers are downloaded.  Now that the build environment is initialized, you must define th$
