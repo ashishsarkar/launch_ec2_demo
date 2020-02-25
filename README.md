@@ -35,13 +35,9 @@ No Prerequisites required as of now.
 
 # Remote State Fetch
 
+```
 No Remote State Fetch is required as of now. 
-
-
 ```
-
-```
-
 
 
 # Getting Started
