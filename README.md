@@ -11,18 +11,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 
 
-The Terraform setup for creating an Inspector service along with the SNS notification services. When any Inspector Assessment is run, the service notifies about the status changes and the reports status being delivered on mail. 
-The terraform set up created several components as below. Refer the script for more details. 
+The Terraform setup for creating an Inspector services along with the SNS notification services. When any Inspector Assessment is run, the service notifies about the status changes and the reports status being delivered on mail. 
+The terraform set up creates several components as below. Refer the script for more details. 
 
 ```
-1. ALB 
-2. R53 Zone Record 
-3. IAM Roles
-4. Cloud watch Log streams 
-5. HTTPS certificate for TLS access
-6. EC2 Autoscaling Group and Launch Configuration 
-7. Autoscale Up / Down policy thresholds for handling PEAK loads. 
-8. ECS cluster 
+1. Inspector 
+2. CloudWtach Events for EC2
+3. CloudWatch Events for Inspector Assessment
+4. Lambda for EC2 for Tagging Instances
+5. Lambda for Inspector with SNS notification
+6. SNS subscription 
    ... an more 
 
 ```
