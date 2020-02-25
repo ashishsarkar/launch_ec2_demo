@@ -2,12 +2,119 @@
 
 Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices. After performing an assessment, Amazon Inspector produces a detailed list of security findings prioritized by level of severity. 
 
-## Getting Started
+## Installation
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 
-## Table of contents
-* [General info](#general-info)
-* [Technologies](#technologies)
-* [Setup](#setup)
+## terraform-inspector-services
+
+
+
+The Terraform setup for creating an Inspector service along with the SNS notification services. When any Inspector Assessment is run, the service notifies about the status changes and the reports status being delivered on mail. 
+The terraform set up created several components as below. Refer the script for more details. 
+
+```
+1. ALB 
+2. R53 Zone Record 
+3. IAM Roles
+4. Cloud watch Log streams 
+5. HTTPS certificate for TLS access
+6. EC2 Autoscaling Group and Launch Configuration 
+7. Autoscale Up / Down policy thresholds for handling PEAK loads. 
+8. ECS cluster 
+   ... an more 
+
+```
+
+
+# Prerequisites
+
+The script uses state information from the following 2 repos: 
+
+```
+1. terraform-vpc-service
+2. terraform-vpc-service-rds
+
+```
+The above two TF scripts should have been run already for this script to execute successfully. This is considering the fact that Cluster cannot be created without an 
+existing VPC and the app containers would run only if there is DB created. 
+
+
+# Remote State Fetch
+
+The following lines of code fetch the state information: 
+
+
+```
+data "terraform_remote_state" "vpc" {
+  backend = "s3"
+  config = {
+    bucket = "terraform-service"
+    key    = "terraform-state-vpc-service"
+    region = "eu-central-1"
+  }
+}
+
+data "terraform_remote_state" "rds" {
+  backend = "s3"
+  config = {
+    bucket = "terraform-service"
+    key    = "terraform-state-rds-service"
+    region = "eu-central-1"
+  }
+}
+
+
+
+```
+
+
+
+# Getting Started
+
+  
+This code requires using Terraform >=0.12.0.  If you are running a older version of Terraform, you may need to upgrade
+
+```
+terraform 0.12upgrade
+```
+
+After cloning
+
+```
+terraform init
+```
+
+This will ensure that the modules are registered and any required providers are downloaded.  Now that the build environment is initialized, you must define th$
+
+```
+terraform plan 
+```
+
+If everything in the plan looks appropriate, you may apply the Terraform module and begin building out your infrastructure by running:
+
+```
+terraform apply 
+
+```
+
+ 
+
+# Backend Configuration
+
+The S3 bucket should be created in advance. Your underlying IAM policy snhould allow TF to have RW access to the Bucket. 
+
+
+```
+terraform {
+  backend "s3" {
+    bucket = "terraform-service"
+    key    = "terraform-state-deployservice"
+    region = "eu-central-1"
+  }
+}
+
+
+```
+
