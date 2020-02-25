@@ -25,7 +25,7 @@ The terraform set up creates several components as below. Refer the script for m
 ```
 
 
-# Prerequisites
+## Prerequisites
 
 ```
 No Prerequisites required as of now.
@@ -33,14 +33,14 @@ No Prerequisites required as of now.
 ```
 
 
-# Remote State Fetch
+## Remote State Fetch
 
 ```
 No Remote State Fetch is required as of now. 
 ```
 
 
-# Getting Started
+## Getting Started
 
   
 This code requires using Terraform >=0.12.0.  If you are running a older version of Terraform, you may need to upgrade
@@ -74,7 +74,7 @@ terraform apply -var-file=environments/${env}/variables.tfvars
 
  
 
-# Backend Configuration
+## Backend Configuration
 
 The S3 bucket should be created in advance. Your underlying IAM policy snhould allow TF to have RW access to the Bucket. 
 
@@ -88,7 +88,7 @@ terraform {
 }
 ```
 
-# Configurations added in environments
+## Configurations added in environments
 ```
 bucket  = "terraform-governance"
 key     = "terraform_aws_inspector/terraform_aws_inspector.tfstate"
@@ -97,4 +97,7 @@ region  = "eu-central-1"
 
 ```
 
-# README's for AWS Inspector Modules
+## README's for AWS Inspector Modules
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
