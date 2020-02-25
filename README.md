@@ -27,15 +27,10 @@ The terraform set up creates several components as below. Refer the script for m
 
 # Prerequisites
 
-The script uses state information from the following 2 repos: 
+```
+No Prerequisites required as of now.
 
 ```
-1. terraform-vpc-service
-2. terraform-vpc-service-rds
-
-```
-The above two TF scripts should have been run already for this script to execute successfully. This is considering the fact that Cluster cannot be created without an 
-existing VPC and the app containers would run only if there is DB created. 
 
 
 # Remote State Fetch
