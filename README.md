@@ -21,7 +21,6 @@ The terraform set up creates several components as below. Refer the script for m
 4. Lambda for EC2 for Tagging Instances
 5. Lambda for Inspector with SNS notification
 6. SNS subscription 
-   ... an more 
 
 ```
 
