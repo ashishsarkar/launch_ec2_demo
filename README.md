@@ -99,5 +99,11 @@ region  = "eu-central-1"
 
 ## README's for AWS Inspector Modules
 * Environments - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/environments
-* [Technologies](#technologies)
-* [Setup](#setup)
+* File - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/file
+* File SNS - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/file_sns
+* Inspector - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/inspector
+* Lambda - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/lambda
+* Packages - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/packages
+* SNS - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/sns
+* SNS Lambda - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/snslambda
+* SNS Packages - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/snspackages
