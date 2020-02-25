@@ -88,7 +88,7 @@ terraform {
 }
 ```
 
-# Configurations added in Environments
+# Configurations added in environments
 ```
 bucket  = "terraform-governance"
 key     = "terraform_aws_inspector/terraform_aws_inspector.tfstate"
