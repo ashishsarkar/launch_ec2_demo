@@ -52,19 +52,23 @@ terraform 0.12upgrade
 After cloning
 
 ```
-terraform init
+env=dev
+
+terraform get -update=true
+
+terraform init -backend-config=environments/dev/backend.config
 ```
 
 This will ensure that the modules are registered and any required providers are downloaded.  Now that the build environment is initialized, you must define th$
 
 ```
-terraform plan 
+terraform plan -var-file=environments/${env}/variables.tfvars 
 ```
 
 If everything in the plan looks appropriate, you may apply the Terraform module and begin building out your infrastructure by running:
 
 ```
-terraform apply 
+terraform apply -var-file=environments/${env}/variables.tfvars 
 
 ```
 
@@ -77,13 +81,19 @@ The S3 bucket should be created in advance. Your underlying IAM policy snhould a
 
 ```
 terraform {
+  required_version = "~> 0.12"
   backend "s3" {
-    bucket = "terraform-service"
-    key    = "terraform-state-deployservice"
-    region = "eu-central-1"
+    encrypt = true
   }
 }
+```
 
+# Configurations added in Environments
+```
+bucket  = "terraform-governance"
+key     = "terraform_aws_inspector/terraform_aws_inspector.tfstate"
+encrypt = true
+region  = "eu-central-1"
 
 ```
 
