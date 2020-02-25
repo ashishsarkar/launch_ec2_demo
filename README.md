@@ -98,6 +98,6 @@ region  = "eu-central-1"
 ```
 
 ## README's for AWS Inspector Modules
-* [Environments - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/environments]
+* Environments - https://gitlab.dol.telekom.de/mcsmco/governance/terraform-aws-inspector/tree/master/environments
 * [Technologies](#technologies)
 * [Setup](#setup)
