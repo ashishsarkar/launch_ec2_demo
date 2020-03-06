@@ -4,7 +4,6 @@ CloudWatch Log Streams:  A log stream is a sequence of log events that share the
 
 CloudWatch Log Groups: A log group is a group of log streams that share the same retention, monitoring, and access control settings. You can define log groups and specify which streams to put into each group. There is no limit on the number of log streams that can belong to one log group.
 
-Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices. After performing an assessment, Amazon Inspector produces a detailed list of security findings prioritized by level of severity. 
 
 ## Installation
 
