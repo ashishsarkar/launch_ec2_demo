@@ -52,20 +52,17 @@ No Remote State Fetch is required as of now.
 This platform requires Ansible. You will need to execute changes(if any) from Master VM. The access to it will be available to @Amey Erande[AMEY.ERANDE@t-systems.com] and other contact person.
 
 ```
-terraform 0.12upgrade
+ansible 2.4
 ```
 
 After cloning
 
 ```
-env=dev
+ansible-playbook <root yml file>.yml --ask-become-pass
 
-terraform get -update=true
-
-terraform init -backend-config=environments/${env}/backend.config
 ```
 
-This will ensure that the modules are registered and any required providers are downloaded.  Now that the build environment is initialized, you must define th$
+
 
 ```
 terraform plan -var-file=environments/${env}/variables.tfvars 
