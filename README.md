@@ -10,20 +10,21 @@ CloudWatch Log Groups: A log group is a group of log streams that share the same
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 
-## terraform-inspector-services
+## cloudwatch_logGroup_Stream_creation
 
+This project is a Ansible Deployment contains scripts that are integrated with OS Hardening scripts. For creating any automation of Default Log Group and Log Streams:
+1) A common by-default log has been implemented in the code.
+2) Automation of the Log Stream has been implemented in the code.
 
-
-The Terraform setup for creating an Inspector services along with the SNS notification services. When any Inspector Assessment is run, the service notifies about the status changes and the reports status being delivered on mail. 
-The terraform set up creates several components as below. Refer the script for more details. 
+Whenever, any OS EC2 Linux Distros is provisioned, the CW Log Group and Streams are created automatically removing the headache of creating any logStream or logGroup.
 
 ```
-1. Inspector 
-2. CloudWtach Events for EC2
-3. CloudWatch Events for Inspector Assessment
-4. Lambda for EC2 for Tagging Instances
-5. Lambda for Inspector with SNS notification
-6. SNS subscription 
+1. Python Script.
+2. Ansible Module (defaults, files, handlers, mets, README.md, tasks, templates, tests, vars).
+3. Defaults directory contains all the path of the scripts, where it should be placed and acts as a variable.
+4. Files contains python scripts for creating CW Log Groups and Log Streams.
+5. Tasks contains all the required code for pacing the files in the respective directory of Slaves EC2 machine and cron setup to execute the script at startup.
+6. It will be executed in the "root"
 
 ```
 
@@ -31,8 +32,10 @@ The terraform set up creates several components as below. Refer the script for m
 ## Prerequisites
 
 ```
-No Prerequisites required as of now.
-
+1) Python-3+ should be installed
+2) PIP should be installed (sudo easy_install pip)
+3) Boto3 package should be installed (pip install boto3)
+4) Requests package should be installed (pip install requests)
 ```
 
 
@@ -46,7 +49,7 @@ No Remote State Fetch is required as of now.
 ## Getting Started
 
   
-This code requires using Terraform >=0.12.0.  If you are running a older version of Terraform, you may need to upgrade
+This platform requires Ansible. You will need to execute changes(if any) from Master VM. The access to it will be available to @Amey Erande[AMEY.ERANDE@t-systems.com] and other contact person.
 
 ```
 terraform 0.12upgrade
