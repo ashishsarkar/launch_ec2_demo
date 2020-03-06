@@ -63,19 +63,9 @@ ansible-playbook <root yml file>.yml --ask-become-pass
 ```
 
 
+Once you execute the script, you should be able to get the module copied to the slave instances at the specified directory. Also note that the script should get executed without any failures, which will specify that the Ansible script is executed successfully.
 
-```
-terraform plan -var-file=environments/${env}/variables.tfvars 
-```
 
-If everything in the plan looks appropriate, you may apply the Terraform module and begin building out your infrastructure by running:
-
-```
-terraform apply -var-file=environments/${env}/variables.tfvars 
-
-```
-
- 
 
 ## Backend Configuration
 
